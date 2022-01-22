@@ -1,7 +1,42 @@
-// // GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
+const express = require('express');
+const app = express();
+const { v4: uuidv4 } = require('uuid');;
+const db = require('../db/database');
 
-// // * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the    client.
+//route to read the `db.json` file and return all saved notes as JSON
+app.get('/api/notes', async function (req, res) {
+    const notes = await db.readNotes();
+    return res.json(notes);
+  });
 
-// // * DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. 
-// This means you'll need to find a way to give each note a unique `id` when it's saved. 
-// In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+//receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
+app.post('/api/notes', async function (req, res) {
+      const notes = await db.readNotes();
+      let newNote = {
+          id: uuidv4(),
+          title: req.body.title,
+          text: req.body.text
+      };
+      // add the new note to the array of existing data
+      newDB = [newNote, ...notes];
+      // update (add) db.json
+      await db.updateNotes(newDB, 'add');
+
+      // return the new note to the client
+      return res.send(newNote)
+  });
+
+app.delete('/api/notes/:id', async function(req, res) {
+    // Identify the note to delete based on the id
+    const noteToDelete = req.params.id;
+    // current state of db.json
+    const currentDB = await db.readNotes();
+    // recreate the db array but only with notes that do not have the entered id
+    const updatedDB = currentDB.filter((note) => note.id !== noteToDelete);
+    // rewrite the updatedDB of notes to the `db.json` file
+    await db.updateNotes(updatedDB, 'delete');
+    // return updatedDB to client
+    return res.send(updatedDB);
+})
+
+module.exports = app;
