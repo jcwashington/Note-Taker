@@ -15,6 +15,8 @@
   Technologies Utilized:
   Express.js, Javascript, HTML, Bootstrap 5, npm uuid package.
 
+  To navigate straight to the Heroku app ==> [JCWashington-Note-Taker on Heroku](https://jcwashington-note-taker.herokuapp.com/).
+
   Challenges and Future Developement Opportunities:
   One thing I tried to keep in mind when developing this application is seperating the routes and Javascript files to make the code easy to navigate. This is ideal. In the future I will hopefully be adding some unit tests, and possibly updating to a more custom looking UI.
 
@@ -39,12 +41,13 @@
   git clone git@github.com:jcwashington/Note-Taker.git
   ```
   Run 'npm install' to install necessary dependencies. 
-  Run 'npm start' to start the application. Navigate to http://localhost:<PORT>/ Your terminal will let you know what PORT you are running on. 
+  Run 'npm start' to start the application. Navigate to http://localhost:(PORT)/ Your terminal will let you know what PORT you are running on. 
   When finished, the updated JSON file can be found in the /db directory.
 
 
   ## [Project Usage](#usage)
-  You can run this application easily from your local computer, but it is also deployed as a Heroku app that can be found here [insert heroku link here](www.herokuapp.com).
+  You can run this application easily from your local computer, but it is also deployed as a Heroku app that can be found here [JCWashington-Note-Taker on Heroku](https://jcwashington-note-taker.herokuapp.com/).
+
   When you open the note-taking application, you are taken to a landing page that links to the notes page.
   ![your landing page when app is opened](visuals/note-taker-landing.png)
   Your existing notes will be listed in the left-hand column and empty fields to enter a new note title and the note's text will be in the right-hand column.
