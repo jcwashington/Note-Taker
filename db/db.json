@@ -1,6 +1,1 @@
-[
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
-]
+[{"id":"958acc04-2ce5-4108-a3e7-58819da700b8","title":"Note Taker how-to","text":"Simply provide a title to the active note. After a title is added, a save icon will appear in the upper right-hand corner. After you have provided any text that you want associated with the active note, simply press the save icon.\nIf you want to delete a note, click the trashcan next to a note in the left bar"},{"id":"725d23df-fe88-42d9-a978-bccadc15e3d5","title":"What the heck is MERN?","text":"MERN stands for MongoDB, Express, React, Node, after the four key technologies that make up the stack. MongoDB is the database, Express the backend component, React is the JS framework and then Node is the JS web server. If you're still as confused as I am, find more information here https://www.mongodb.com/mern-stack"},{"id":"9e6ceaf4-ab3e-4121-9f92-2aebe534f5a2","title":"Express Unit","text":"Documentation can be found at https://expressjs.com/\n\nExpress is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It is a free and open-source software. It is the backend component of our MERN stack curriculum."},{"title":"Test Title","text":"Test text"}]
